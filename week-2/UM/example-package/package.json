@@ -1,0 +1,14 @@
+{
+  "name": "package-publish-example",
+  "version": "1.2.3",
+  "description": "This is an example app for package publishing",
+  "main": "index.js",
+  "author": "Utkarsh Mahajan",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "hello-world": "cli.js",
+    "bye-bye-world": "bye.js"
+  }
+}

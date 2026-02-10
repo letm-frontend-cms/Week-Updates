@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Keep classes used by runtime-loaded UI library (public/grff-ui-library.js) */
+@source "../public/grff-ui-library.js";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

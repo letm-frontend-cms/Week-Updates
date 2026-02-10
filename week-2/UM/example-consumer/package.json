@@ -1,0 +1,9 @@
+{
+  "name": "example-consumer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "package-publish-example": "file:../example-package/package-publish-example-1.2.2.tgz"
+  }
+}

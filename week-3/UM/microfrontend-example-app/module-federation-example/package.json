@@ -2,11 +2,11 @@
   "name": "microfrontend-example-app",
   "private": true,
   "workspaces": [
-    "module-federation-example/shell_app",
-    "module-federation-example/react_course_provider",
-    "module-federation-example/spring_boot_course_provider",
-    "module-federation-example/django_course_provider",
-    "module-federation-example/c_sharp_course_provider"
+    "shell_app",
+    "react_course_provider",
+    "spring_boot_course_provider",
+    "django_course_provider",
+    "c_sharp_course_provider"
   ],
   "scripts": {
     "install:all": "yarn install",

@@ -1,0 +1,125 @@
+.course-page {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-page h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.course-info {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.details {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  font-size: 1.1rem;
+}
+
+.detail-item strong {
+  color: #68217a;
+}
+
+.enroll-btn {
+  background: #68217a;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+  background: #561b66;
+  transform: scale(1.05);
+}
+
+.lessons-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.lessons-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.lessons-list {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lesson-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lesson-item.active {
+  background: rgba(104, 33, 122, 0.3);
+  border-left: 3px solid #68217a;
+}
+
+.lesson-number {
+  background: #68217a;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.lesson-title {
+  font-size: 1rem;
+}
+
+.lesson-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.lesson-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #68217a;
+}
+
+.lesson-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

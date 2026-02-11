@@ -1,0 +1,36 @@
+{
+  "name": "microfrontend-example-app",
+  "private": true,
+  "workspaces": [
+    "module-federation-example/shell_app",
+    "module-federation-example/react_course_provider",
+    "module-federation-example/spring_boot_course_provider",
+    "module-federation-example/django_course_provider",
+    "module-federation-example/c_sharp_course_provider"
+  ],
+  "scripts": {
+    "install:all": "yarn install",
+    "dev:react": "yarn workspace react_course_provider dev",
+    "dev:spring": "yarn workspace spring_boot_course_provider dev",
+    "dev:django": "yarn workspace django_course_provider dev",
+    "dev:csharp": "yarn workspace c_sharp_course_provider dev",
+    "dev:shell": "yarn workspace shell_app dev",
+    "dev:all": "concurrently \"yarn dev:react\" \"yarn dev:spring\" \"yarn dev:django\" \"yarn dev:csharp\" \"yarn dev:shell\"",
+    "build:react": "yarn workspace react_course_provider build",
+    "build:spring": "yarn workspace spring_boot_course_provider build",
+    "build:django": "yarn workspace django_course_provider build",
+    "build:csharp": "yarn workspace c_sharp_course_provider build",
+    "build:shell": "yarn workspace shell_app build",
+    "build:all": "yarn build:react && yarn build:spring && yarn build:django && yarn build:csharp && yarn build:shell",
+    "preview:react": "yarn workspace react_course_provider preview",
+    "preview:spring": "yarn workspace spring_boot_course_provider preview",
+    "preview:django": "yarn workspace django_course_provider preview",
+    "preview:csharp": "yarn workspace c_sharp_course_provider preview",
+    "preview:shell": "yarn workspace shell_app preview",
+    "preview:all": "concurrently \"yarn preview:react\" \"yarn preview:spring\" \"yarn preview:django\" \"yarn preview:csharp\" \"yarn preview:shell\"",
+    "build:preview": "yarn build:all && yarn preview:all"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

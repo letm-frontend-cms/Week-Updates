@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GRFF Store — Single-SPA</title>
+
+  <!-- Import map: tells SystemJS where to find each MFE -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@grff/root-config": "//localhost:9000/grff-root-config.js",
+        "@grff/catalog": "//localhost:8080/grff-catalog.js",
+        "@grff/cart": "//localhost:8081/grff-cart.js",
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.dev.js",
+        "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"
+      }
+    }
+  </script>
+
+  <!-- Global styles -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f9fafb; }
+
+    nav {
+      background: #1e293b;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a { color: white; text-decoration: none; margin-right: 1.5rem; }
+    nav .logo { font-size: 1.25rem; font-weight: bold; color: #60a5fa; }
+
+    #catalog-container, #cart-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+  </style>
+
+  <!-- SystemJS for module loading -->
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.min.js"></script>
+</head>
+<body>
+
+  <!-- The shell — always visible -->
+  <nav>
+    <span class="logo">🛍️ GRFF Store</span>
+    <div>
+      <a href="/">Products</a>
+      <a href="/cart">Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </nav>
+
+  <!-- MFEs render into these containers -->
+  <div id="catalog-container"></div>
+  <div id="cart-container"></div>
+
+  <!-- Shell listens to cart events from Catalog MFE -->
+  <script>
+    let cartCount = 0;
+    window.addEventListener('cart:add', function() {
+      cartCount++;
+      document.getElementById('cart-count').textContent = cartCount;
+    });
+  </script>
+  <!-- Boot single-spa -->
+  <script>
+    System.import('@grff/root-config');
+  </script>
+
+</body>
+</html>

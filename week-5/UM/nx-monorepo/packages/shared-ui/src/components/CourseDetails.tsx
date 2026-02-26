@@ -19,7 +19,7 @@ const CourseDetails = ({ title, description, duration, price, level, lessons }: 
   const [selectedLesson, setSelectedLesson] = useState(0);
 
   return (
-    <div className="course-page">
+    <div className="course-page" style={{border:'10px solid red'}}>
       <h1>{title}</h1>
       
       <div className="course-info">

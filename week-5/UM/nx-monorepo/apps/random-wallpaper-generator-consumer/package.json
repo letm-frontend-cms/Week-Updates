@@ -1,0 +1,11 @@
+{
+  "name": "random-wallpaper-generator-consumer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cli-package-test": "npx cli-package-test"
+  },
+  "dependencies": {
+    "random-wallpaper-generator": "workspace:*"
+  }
+}

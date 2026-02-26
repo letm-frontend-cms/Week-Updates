@@ -107,6 +107,12 @@ importers:
 
   apps/random-wallpaper-generator: {}
 
+  apps/random-wallpaper-generator-consumer:
+    dependencies:
+      random-wallpaper-generator:
+        specifier: workspace:*
+        version: link:../random-wallpaper-generator
+
   apps/react_course_provider:
     dependencies:
       '@nx-monorepo/shared-ui':

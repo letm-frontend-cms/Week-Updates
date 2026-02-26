@@ -7,7 +7,8 @@
       "outputs": ["{projectRoot}/dist"]
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "dependsOn": ["^build"]
     },
     "preview": {
       "cache": false

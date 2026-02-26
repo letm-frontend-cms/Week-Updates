@@ -1,0 +1,23 @@
+{
+  "name": "c_sharp_course_provider",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@nx-monorepo/shared-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "2.0.0-beta.2",
+    "@rsbuild/plugin-react": "^1.4.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "~18.3.1",
+    "typescript": "^5.7.2",
+    "@module-federation/rsbuild-plugin":"^2.0.0"
+  }
+}

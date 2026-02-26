@@ -1,0 +1,25 @@
+{
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "preview": {
+      "cache": false
+    }
+  },
+  "namedInputs": {
+    "production": [
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/**/*.spec.tsx",
+      "!{projectRoot}/**/*.test.tsx"
+    ]
+  },
+  "cacheDirectory": ".nx/cache"
+}

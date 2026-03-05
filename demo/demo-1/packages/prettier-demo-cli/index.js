@@ -5,10 +5,11 @@ const path = require('path');
 
 const targetDir = process.cwd();
 const configFile = path.join(__dirname, 'prettier.config.js');
+const prettierBin = path.join(__dirname, 'node_modules', '.bin', 'prettier');
 
 try {
   execSync(
-    `npx prettier --write "${targetDir}/src/**/*.{js,jsx,ts,tsx,css,json}" --config "${configFile}"`,
+    `"${prettierBin}" --write "${targetDir}/src/**/*.{js,jsx,ts,tsx,css,json}" --config "${configFile}"`,
     { stdio: 'inherit' }
   );
 } catch (error) {

@@ -1,22 +1,27 @@
 #!/usr/bin/env node
 
 const { ESLint } = require('eslint');
-const path = require('path');
+const overrideConfig = require('./eslint.config');
 
 async function main() {
   const targetDir = process.cwd();
-  
+
   const eslint = new ESLint({
-    overrideConfigFile: path.join(__dirname, '.eslintrc.js'),
+    overrideConfigFile: true,
+    overrideConfig,
   });
 
   try {
-    const results = await eslint.lintFiles([`${targetDir}/**/*.{js,jsx,ts,tsx}`]);
+    const results = await eslint.lintFiles([`${targetDir}/src/**/*.{js,jsx,ts,tsx}`]);
     const formatter = await eslint.loadFormatter('stylish');
-    const resultText = formatter.format(results);
-    
-    console.log(resultText);
-    
+    const resultText = await formatter.format(results);
+
+    if (resultText) {
+      console.log(resultText);
+    } else {
+      console.log('✓ No issues found');
+    }
+
     const hasErrors = results.some(result => result.errorCount > 0);
     process.exit(hasErrors ? 1 : 0);
   } catch (error) {

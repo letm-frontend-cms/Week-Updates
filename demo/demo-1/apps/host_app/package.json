@@ -6,10 +6,12 @@
     "dev": "rsbuild dev --open",
     "build": "rsbuild build",
     "preview": "rsbuild preview",
-    "lint": "pnpm exec run-lint"
+    "lint": "pnpm exec run-lint",
+    "prettier": "pnpm exec run-prettier"
   },
   "dependencies": {
     "eslint-demo-cli": "^2.0.0",
+    "prettier-demo-cli": "1.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

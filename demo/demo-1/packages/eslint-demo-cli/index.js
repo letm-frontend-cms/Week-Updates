@@ -8,8 +8,6 @@ async function main() {
   
   const eslint = new ESLint({
     overrideConfigFile: path.join(__dirname, '.eslintrc.js'),
-    useEslintrc: false,
-    ignore: false,
   });
 
   try {

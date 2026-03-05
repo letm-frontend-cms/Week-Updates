@@ -1,0 +1,19 @@
+{
+  "name": "prettier-demo-cli",
+  "version": "1.0.0",
+  "description": "Prettier CLI for React microfrontends",
+  "main": "index.js",
+  "bin": {
+    "run-prettier": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["prettier", "react", "microfrontend", "cli"],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.1",
+  "dependencies": {
+    "prettier": "^3.5.3"
+  }
+}

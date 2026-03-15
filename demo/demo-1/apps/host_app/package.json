@@ -10,7 +10,10 @@
     "prettier": "pnpm exec run-prettier"
   },
   "dependencies": {
+    "@module-federation/runtime": "^2.1.0",
     "eslint-demo-cli": "^2.0.0",
+    "footer-utils-ankit": "^1.0.1",
+    "header-ui-ankit": "^1.0.1",
     "prettier-demo-cli": "1.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

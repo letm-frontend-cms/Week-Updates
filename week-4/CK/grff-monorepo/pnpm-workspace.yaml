@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+  - 'libs/api/products'
+  - 'libs/components'
+  - 'libs/shared/*'
+  - 'libs/shop/*'

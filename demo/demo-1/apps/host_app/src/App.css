@@ -5,11 +5,22 @@ body {
   background-image: linear-gradient(to bottom, #020917, #101725);
 }
 
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .content {
   display: flex;
-  min-height: 100vh;
+  flex: 1;
   line-height: 1.1;
-  text-align: center;
   flex-direction: column;
-  justify-content: center;
+  background: #ffffff;
+  color: #111827;
+}
+
+/* Footer has light background (#eee) - needs dark text for visibility (body inherits white) */
+.app-footer {
+  color: #111827;
 }

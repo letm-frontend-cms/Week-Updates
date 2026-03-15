@@ -1,3 +1,2 @@
-
-    export type RemoteKeys = 'provider';
-    type PackageType<T> = T extends 'provider' ? typeof import('provider') :any;
+export type RemoteKeys = never;
+export type PackageType<T> = any;

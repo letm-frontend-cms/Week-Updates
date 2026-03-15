@@ -1,0 +1,12 @@
+{
+  "name": "@org/dashboard",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "tags": ["scope:grff"]
+  },
+  "devDependencies": {
+    "@grff-monorepo/components": "workspace:*"
+  }
+}

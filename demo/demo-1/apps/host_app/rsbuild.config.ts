@@ -5,7 +5,8 @@ import moduleFederationConfig from './module-federation.config';
 
 export default defineConfig({
   plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
-  server:{
-    port:5174,
-  }
+  server: {
+    port: 4000,
+    strictPort: true,
+  },
 });

@@ -23,6 +23,17 @@ Implement error handling for remote loading failures
 Add fallback UI if a micro app fails to load
 Validate integration between Host and Micro Apps
 
+## Integration Validation Checklist
+
+| # | Check | How to Verify |
+|---|-------|---------------|
+| 1 | Host loads without remote | Start host only (`pnpm start:host_app`); fallback UI shown |
+| 2 | Host loads with remote | Run `pnpm dev`; HomePage renders in content area |
+| 3 | Remote standalone works | Open http://localhost:4001 |
+| 4 | Shared deps (React) singleton | No duplicate React instances; no hydration mismatch |
+| 5 | Header/Footer in host | Visible, correct styling |
+| 6 | Fallback on remote down | Stop remote; refresh host; retry/fallback works |
+
 # Ankit
 Responsibility: Shared UI Package (Header and Footer)
 

@@ -3,9 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "wait-on": "^8.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:host_app": "pnpm --filter host_app dev"
+    "start:host_app": "pnpm --filter host_app dev",
+    "start:home_page": "pnpm --filter home-page-ui dev",
+    "dev": "concurrently -k \"pnpm run start:home_page\" \"wait-on http://localhost:4001 && pnpm run start:host_app\"",
+    "build:home_page": "pnpm --filter home-page-ui build",
+    "preview:home_page": "pnpm --filter home-page-ui preview"
   },
   "keywords": [],
   "author": "",

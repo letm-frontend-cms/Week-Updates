@@ -37,10 +37,18 @@ function mfWindowsPathFix() {
   }
 }
 
+// For production: use full URL so manifest assets load from remote origin, not host.
+// Vercel sets VERCEL_URL (e.g. demo-1-home-page.vercel.app); use VITE_PUBLIC_URL if set.
+const getBase = () => {
+  if (process.env.VITE_PUBLIC_URL) return process.env.VITE_PUBLIC_URL.replace(/\/$/, '') + '/'
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/`
+  return '/'
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   root: __dirname,
-  base: '/',
+  base: getBase(),
   plugins: [
     react(),
     federation({

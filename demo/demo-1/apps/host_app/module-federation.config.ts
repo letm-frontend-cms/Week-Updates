@@ -1,10 +1,13 @@
 import path from 'path';
 import { createModuleFederationConfig } from '@module-federation/rsbuild-plugin';
 
+const REMOTE_HOME_PAGE_URL =
+  process.env.PUBLIC_REMOTE_HOME_PAGE_URL || 'http://localhost:4001';
+
 export default createModuleFederationConfig({
   name: 'host_app',
   remotes: {
-    home_page: 'home_page@http://localhost:4001/mf-manifest.json',
+    home_page: `home_page@${REMOTE_HOME_PAGE_URL}/mf-manifest.json`,
   },
   dts: false,
   shareStrategy: 'loaded-first',

@@ -6,7 +6,8 @@ interface RemoteFallbackProps {
   onRetry?: () => void;
 }
 
-const REMOTE_STANDALONE_URL = 'http://localhost:4001';
+const REMOTE_STANDALONE_URL =
+  (process.env.PUBLIC_REMOTE_HOME_PAGE_URL as string) || 'http://localhost:4001';
 
 export const RemoteFallback: ComponentType<RemoteFallbackProps> = ({
   error,

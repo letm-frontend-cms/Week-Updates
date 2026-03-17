@@ -1,2 +1,3 @@
 # Header and footer lib
-https://github.com/nagarro-ankit/ankit-utils
+Repository = https://github.com/nagarro-ankit/ankit-utils
+npm = https://www.npmjs.com/package/ankit-utils

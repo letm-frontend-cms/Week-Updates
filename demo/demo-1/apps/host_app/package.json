@@ -16,13 +16,14 @@
     "header-ui-ankit": "^1.0.1",
     "prettier-demo-cli": "1.1.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.13.1"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
     "@module-federation/rsbuild-plugin": "^2.1.0",
     "@rsbuild/core": "2.0.0-beta.2",
     "@rsbuild/plugin-react": "^1.4.5",
+    "@types/node": "^22.10.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "~18.3.1",
     "typescript": "^5.7.2"

@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType } from "react";
 
 interface RemoteFallbackProps {
   error?: Error;
@@ -7,11 +7,12 @@ interface RemoteFallbackProps {
 }
 
 const REMOTE_STANDALONE_URL =
-  (process.env.PUBLIC_REMOTE_HOME_PAGE_URL as string) || 'http://localhost:4001';
+  (typeof process !== "undefined" && process.env.PUBLIC_REMOTE_HOME_PAGE_URL) ||
+  "http://localhost:4001";
 
 export const RemoteFallback: ComponentType<RemoteFallbackProps> = ({
   error,
-  remoteName = 'Home Page',
+  remoteName = "Home Page",
   onRetry,
 }) => {
   const handleRetry = () => {
@@ -26,43 +27,43 @@ export const RemoteFallback: ComponentType<RemoteFallbackProps> = ({
     <div
       className="remote-fallback"
       style={{
-        padding: '24px',
-        margin: '16px',
-        border: '1px solid #ffa39e',
-        borderRadius: '8px',
-        backgroundColor: '#fff1f0',
-        color: '#cf1322',
+        padding: "24px",
+        margin: "16px",
+        border: "1px solid #ffa39e",
+        borderRadius: "8px",
+        backgroundColor: "#fff1f0",
+        color: "#cf1322",
       }}
     >
-      <h3 style={{ margin: '0 0 12px 0', fontSize: '1.125rem' }}>
+      <h3 style={{ margin: "0 0 12px 0", fontSize: "1.125rem" }}>
         Micro App Failed to Load
       </h3>
-      <p style={{ margin: '0 0 12px 0', lineHeight: 1.5 }}>
+      <p style={{ margin: "0 0 12px 0", lineHeight: 1.5 }}>
         The {remoteName} could not be loaded. This may happen if the remote app
         is not running or there is a network issue.
       </p>
       {error && (
         <p
           style={{
-            margin: '0 0 16px 0',
-            fontSize: '0.875rem',
+            margin: "0 0 16px 0",
+            fontSize: "0.875rem",
             opacity: 0.9,
           }}
         >
           {error.message}
         </p>
       )}
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
         <button
           type="button"
           onClick={handleRetry}
           style={{
-            padding: '8px 16px',
-            borderRadius: '6px',
-            border: '1px solid #cf1322',
-            backgroundColor: '#fff',
-            color: '#cf1322',
-            cursor: 'pointer',
+            padding: "8px 16px",
+            borderRadius: "6px",
+            border: "1px solid #cf1322",
+            backgroundColor: "#fff",
+            color: "#cf1322",
+            cursor: "pointer",
             fontWeight: 500,
           }}
         >
@@ -73,12 +74,12 @@ export const RemoteFallback: ComponentType<RemoteFallbackProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            padding: '8px 16px',
-            borderRadius: '6px',
-            border: '1px solid #cf1322',
-            backgroundColor: '#fff',
-            color: '#cf1322',
-            textDecoration: 'none',
+            padding: "8px 16px",
+            borderRadius: "6px",
+            border: "1px solid #cf1322",
+            backgroundColor: "#fff",
+            color: "#cf1322",
+            textDecoration: "none",
             fontWeight: 500,
           }}
         >

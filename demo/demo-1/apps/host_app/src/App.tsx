@@ -2,8 +2,7 @@ import type { ComponentType } from 'react';
 import { lazy, Suspense } from 'react';
 import { loadRemote } from '@module-federation/runtime';
 import './App.css';
-import { Header } from 'header-ui-ankit';
-import Footer from 'footer-utils-ankit/src/Footer';
+import {Header, Footer} from 'ankit-utils';
 import { ErrorBoundary } from './components/ErrorBoundary';
 
 const HomePage = lazy(() =>

@@ -11,3 +11,9 @@ declare module 'home_page/HomePage' {
   const HomePage: FC;
   export default HomePage;
 }
+
+declare module 'home_page/AboutUs' {
+  import type { FC } from 'react';
+  const AboutUs: FC;
+  export default AboutUs;
+}

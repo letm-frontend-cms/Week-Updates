@@ -38,11 +38,13 @@ function mfWindowsPathFix() {
 }
 
 // For production: use full URL so manifest assets load from remote origin, not host.
-// Vercel sets VERCEL_URL (e.g. demo-1-home-page.vercel.app); use VITE_PUBLIC_URL if set.
+// Vercel sets VERCEL_URL (e.g. demo-1-about-us.vercel.app); use VITE_PUBLIC_URL if set.
+// Use globalThis.process?.env for Vercel/build environments where process may be undefined.
 const getBase = () => {
-  if (process.env.VITE_PUBLIC_URL)
-    return process.env.VITE_PUBLIC_URL.replace(/\/$/, "") + "/";
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/`;
+  const env = globalThis.process?.env ?? {};
+  if (env.VITE_PUBLIC_URL)
+    return env.VITE_PUBLIC_URL.replace(/\/$/, "") + "/";
+  if (env.VERCEL_URL) return `https://${env.VERCEL_URL}/`;
   return "/";
 };
 

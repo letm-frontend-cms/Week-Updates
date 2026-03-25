@@ -1,0 +1,23 @@
+{
+  "name": "@mfe-demo/mfe-svelte",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --config webpack.config.js",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "single-spa": "^6.0.1",
+    "single-spa-svelte": "^2.0.0",
+    "svelte": "^4.2.19"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "svelte-loader": "^3.2.4",
+    "svelte-preprocess": "^6.0.3",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}

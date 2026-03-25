@@ -1,0 +1,30 @@
+<div class="mfe mfe-angular">
+  <header class="mfe-hdr">
+    <span class="badge">Angular</span>
+    <h2>Angular MFE</h2>
+  </header>
+  <div class="mfe-grid">
+    <section class="panel send">
+      <h3>Send</h3>
+      <p class="hint">Type text and broadcast to other MFEs.</p>
+      <div class="row">
+        <input type="text" [(ngModel)]="text" placeholder="Message" />
+        <button type="button" class="primary" (click)="sendMessage()">Send</button>
+      </div>
+    </section>
+    <section class="panel recv">
+      <h3>Receive</h3>
+      <p class="hint">Messages from React &amp; Svelte (via RxJS <code>async</code> pipe).</p>
+      <ul class="msg-list">
+        <ng-container *ngIf="eventBus.messages$ | async as messages">
+          <li *ngIf="messages.length === 0" class="empty">No messages yet</li>
+          <li *ngFor="let m of messages">
+            <strong>{{ m.source }}</strong>
+            <span class="type">{{ m.type }}</span>
+            <code>{{ m.payload | json }}</code>
+          </li>
+        </ng-container>
+      </ul>
+    </section>
+  </div>
+</div>

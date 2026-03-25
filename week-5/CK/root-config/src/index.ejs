@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single-SPA MFE Demo (React, Angular, Svelte + RxJS)</title>
+  <!-- single-spa-angular marks zone.js as webpack external and removes the polyfills chunk; load Zone globally before any MFE. Must match mfe-angular package.json zone.js version (~0.14.x). -->
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.14.10/bundles/zone.umd.min.js"></script>
+  <script type="systemjs-importmap">
+  {
+    "imports": {
+      "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@6/lib/es2015/system/single-spa.min.js",
+      "react": "https://cdn.jsdelivr.net/npm/@esm-bundle/react@17.0.2/system/react.production.min.js",
+      "react-dom": "https://cdn.jsdelivr.net/npm/@esm-bundle/react-dom@17.0.2/system/react-dom.production.min.js",
+      "@mfe-demo/root-config": "/mfe-demo-root-config.js",
+      "@mfe-demo/event-bus": "http://localhost:9002/mfe-demo-event-bus.js",
+      "@mfe-demo/mfe-react": "http://localhost:8500/mfe-demo-mfe-react.js",
+      "@mfe-demo/mfe-angular": "http://localhost:4200/main.js",
+      "@mfe-demo/mfe-svelte": "http://localhost:8501/mfe-demo-mfe-svelte.js",
+      "zone.js": "https://cdn.jsdelivr.net/npm/zone.js@0.14.10/bundles/zone.umd.min.js"
+    }
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.3/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.3/dist/extras/named-register.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f1419;
+      color: #e6edf3;
+      min-height: 100vh;
+    }
+
+    .shell-header {
+      padding: 1rem 1.25rem;
+      background: linear-gradient(135deg, #1a2332 0%, #0d1117 100%);
+      border-bottom: 1px solid #30363d;
+    }
+
+    .shell-header h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .shell-header p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #8b949e;
+      max-width: 56rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="shell-header">
+    <h1>Microfrontend demo · Single-SPA · RxJS event bus</h1>
+    <p>Open <code>http://localhost:9000</code> after starting all five dev servers (see README). Messages flow in-memory
+      via <code>@mfe-demo/event-bus</code>.</p>
+  </header>
+  <script>
+    System.import('@mfe-demo/root-config');
+  </script>
+</body>
+
+</html>

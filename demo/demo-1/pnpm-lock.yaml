@@ -105,8 +105,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       ankit-utils:
-        specifier: ^1.0.2
-        version: 1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       eslint-demo-cli:
         specifier: ^2.0.0
         version: 2.0.0(jiti@2.6.1)
@@ -790,8 +790,8 @@ packages:
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
 
-  ankit-utils@1.0.2:
-    resolution: {integrity: sha512-U0L9YnHDexhvM7HcXNV1BtkGFckoALclCzNSaL1WVj36X1rLt64789GLS1Hv5FsYxnEZnEgzpKJnrDwIgvjqXA==}
+  ankit-utils@1.0.4:
+    resolution: {integrity: sha512-nBQVlvuOXw1/zykFz+Jjg6c8MrDnw8NoTzU+RZJdrPwKqSAAiQv8sI5G900+wtIVkAD/sChpq1T+yIN0nzsjVA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -2929,7 +2929,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  ankit-utils@1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  ankit-utils@1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)

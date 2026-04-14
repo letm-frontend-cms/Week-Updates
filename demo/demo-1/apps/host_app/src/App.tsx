@@ -36,7 +36,7 @@ const App = () => {
             <Suspense fallback={<RemoteLoadingFallback />}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/deals" element={<AboutUs />} />
+                <Route path="/about" element={<AboutUs />} />
               </Routes>
             </Suspense>
           </ErrorBoundary>

@@ -1,7 +1,7 @@
 import { loadRemote } from "@module-federation/runtime";
 import { Footer, Header } from "ankit-utils";
-import type { ComponentType } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import type { ComponentType, MouseEvent } from "react";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import { RemoteApp } from "./components/RemoteApp";
 
@@ -11,9 +11,20 @@ const homeLoader = () =>
 const aboutLoader = () =>
   loadRemote("about_us/AboutUs") as Promise<{ default: ComponentType }>;
 
-const App = () => (
-  <BrowserRouter>
-    <div className="app-shell">
+const AppShell = () => {
+  const navigate = useNavigate();
+
+  const interceptLinks = (e: MouseEvent<HTMLDivElement>) => {
+    const anchor = (e.target as Element).closest("a");
+    const href = anchor?.getAttribute("href");
+    if (href?.startsWith("/") && !href.startsWith("//")) {
+      e.preventDefault();
+      navigate(href);
+    }
+  };
+
+  return (
+    <div className="app-shell" onClick={interceptLinks}>
       <Header />
       <div className="content">
         <Routes>
@@ -31,6 +42,12 @@ const App = () => (
         <Footer />
       </div>
     </div>
+  );
+};
+
+const App = () => (
+  <BrowserRouter>
+    <AppShell />
   </BrowserRouter>
 );
 

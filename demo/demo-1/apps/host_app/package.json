@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@module-federation/runtime": "^2.1.0",
-    "ankit-utils": "^1.0.2",
+    "ankit-utils": "^1.0.3",
     "eslint-demo-cli": "^2.0.0",
     "prettier-demo-cli": "1.1.0",
     "react": "^18.3.1",

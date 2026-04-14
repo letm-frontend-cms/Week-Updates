@@ -5,6 +5,7 @@ interface Props {
   children: ReactNode;
   fallback?: ReactNode;
   onRetry?: () => void;
+  remoteName?: string;
 }
 
 interface State {
@@ -39,7 +40,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <RemoteFallback
           error={this.state.error}
-          remoteName="Home Page"
+          remoteName={this.props.remoteName}
           onRetry={this.handleRetry}
         />
       );

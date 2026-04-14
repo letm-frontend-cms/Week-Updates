@@ -6,10 +6,6 @@ interface RemoteFallbackProps {
   onRetry?: () => void;
 }
 
-// Safe for browser: globalThis.process is undefined in browser, avoids ReferenceError
-const REMOTE_STANDALONE_URL =
-  globalThis.process?.env?.PUBLIC_REMOTE_HOME_PAGE_URL || 'http://localhost:4001';
-
 export const RemoteFallback: ComponentType<RemoteFallbackProps> = ({
   error,
   remoteName = "Home Page",
@@ -69,22 +65,6 @@ export const RemoteFallback: ComponentType<RemoteFallbackProps> = ({
         >
           Retry
         </button>
-        <a
-          href={REMOTE_STANDALONE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            padding: "8px 16px",
-            borderRadius: "6px",
-            border: "1px solid #cf1322",
-            backgroundColor: "#fff",
-            color: "#cf1322",
-            textDecoration: "none",
-            fontWeight: 500,
-          }}
-        >
-          Open Standalone ({REMOTE_STANDALONE_URL})
-        </a>
       </div>
     </div>
   );

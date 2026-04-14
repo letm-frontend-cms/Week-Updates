@@ -1,4 +1,3 @@
-import path from "path";
 import { createModuleFederationConfig } from "@module-federation/rsbuild-plugin";
 
 const REMOTE_HOME_PAGE_URL =
@@ -14,9 +13,6 @@ export default createModuleFederationConfig({
   },
   dts: false,
   shareStrategy: "loaded-first",
-  runtimePlugins: [
-    path.resolve(process.cwd(), "src/runtime-plugin/fallback.ts"),
-  ],
   shared: {
     react: { singleton: true, requiredVersion: "^18.3.1" },
     "react-dom": { singleton: true, requiredVersion: "^18.3.1" },
